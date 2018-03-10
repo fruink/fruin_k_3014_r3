@@ -17,7 +17,7 @@
 			$firstDate = strtotime($found_user['user_date']); //taking user's date from db
 			$verified = $found_user['user_verify'];
 			//echo date(DATE_RFC822) . "<br>";
-			if($firstDate > $firstLogin+180){
+			if($firstDate > $firstLogin+200){
 				if($verified == 'yes'){//user is verified therefore recieves a yes
 					$suspendString = "UPDATE tbl_users SET user_verify='suspended' WHERE user_id={$id}";
 					$suspendQuery = mysqli_query($link, $suspendString);
